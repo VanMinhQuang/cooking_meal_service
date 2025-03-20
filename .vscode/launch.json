@@ -1,0 +1,25 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Debug TypeScript",
+        "type": "node",
+        "request": "launch",
+        "program": "${workspaceFolder}/src/server.ts",
+        "outFiles": ["${workspaceFolder}/dist/**/*.js"],
+        "preLaunchTask": "tsc: build - tsconfig.json",
+        "sourceMaps": true,
+        "restart": true,
+        "env": {
+          "NODE_ENV": "development"
+        }
+      },
+      {
+        "name": "Attach Debugger",
+        "type": "node",
+        "request": "attach",
+        "port": 9229,
+        "restart": true
+      }
+    ]
+  }
