@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-import Meal from "../models/meal";
+import Meal from "../data/models/meal";
 
 export const connectDB = async () => {
     try{

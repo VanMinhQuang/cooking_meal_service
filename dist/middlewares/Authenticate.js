@@ -6,7 +6,6 @@ const authenticate = (req, res, next) => {
     if (!token)
         return res.status(401).json({ message: "Unauthorized" });
     try {
-        // Verify token logic (e.g., JWT verification)
         next();
     }
     catch (error) {
@@ -14,4 +13,4 @@ const authenticate = (req, res, next) => {
     }
 };
 exports.authenticate = authenticate;
-//# sourceMappingURL=Authenticate.js.map
+//# sourceMappingURL=authenticate.js.map

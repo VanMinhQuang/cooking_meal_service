@@ -1,55 +1,43 @@
 "use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || (function () {
+    var ownKeys = function(o) {
+        ownKeys = Object.getOwnPropertyNames || function (o) {
+            var ar = [];
+            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+            return ar;
+        };
+        return ownKeys(o);
+    };
+    return function (mod) {
+        if (mod && mod.__esModule) return mod;
+        var result = {};
+        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+        __setModuleDefault(result, mod);
+        return result;
+    };
+})();
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
-const mealController_1 = require("../controllers/mealController");
+const mealController = __importStar(require("../api/controllers/mealController"));
 const router = (0, express_1.Router)();
-/**
- * @swagger
- * /api/meals:
- *   get:
- *     summary: Get all meals
- *     description: Retrieve a list of all meals.
- *     responses:
- *       200:
- *         description: A list of meals.
- */
-router.get("/", mealController_1.getMeals);
-/**
- * @swagger
- * /api/meals/{id}:
- *   get:
- *     summary: Get a meal by ID
- *     parameters:
- *       - in: path
- *         name: id
- *         required: true
- *         schema:
- *           type: string
- *     responses:
- *       200:
- *         description: A single meal.
- */
-router.get("/:id", mealController_1.getMealById);
-/**
- * @swagger
- * /api/meals:
- *   post:
- *     summary: Create a new meal
- *     requestBody:
- *       required: true
- *       content:
- *         application/json:
- *           schema:
- *             type: object
- *             properties:
- *               name:
- *                 type: string
- *               price:
- *                 type: number
- *     responses:
- *       201:
- *         description: Meal created successfully.
- */
-router.post("/", mealController_1.createMeal);
+router.get("/", mealController.getMeals);
+router.get("/:id", mealController.getMealById);
+router.post("/", mealController.createMeal);
 exports.default = router;
 //# sourceMappingURL=mealRoute.js.map
