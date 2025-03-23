@@ -1,6 +1,7 @@
 import swaggerUi from "swagger-ui-express";
 import swaggerJsdoc from "swagger-jsdoc";
 import { Application } from "express";
+import path from "path";
 
 const swaggerOptions = {
     definition: {
@@ -11,8 +12,9 @@ const swaggerOptions = {
             description: "A simple API for managing meals",
         },
     },
-    apis: ["./routes/*.ts"], 
+    apis: [path.join(__dirname, "../routes/*.js")], // Use .ts for TypeScript
 };
+
 
 const swaggerDocs = swaggerJsdoc(swaggerOptions);
 
