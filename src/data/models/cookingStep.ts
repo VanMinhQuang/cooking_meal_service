@@ -15,7 +15,7 @@ export const cookingStep : Schema = new Schema({
     stepDescr: {type: String, required: true},
     time: {type: Number, required: true},   //in minutes
     stepOrder: {type: Number, required: true},
-    mealID: {type: Schema.Types.ObjectId, ref: 'Meal', required: true}
+    mealID: {type: Schema.Types.String, ref: 'Meal', required: true}
 })
 
 export default mongoose.model<ICookingStep>('CookingStep',cookingStep,'CookingStep')

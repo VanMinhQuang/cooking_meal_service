@@ -39,7 +39,7 @@ const mongoose_1 = __importStar(require("mongoose"));
 exports.method = new mongoose_1.Schema({
     methodID: { type: String, required: true, unique: true },
     descr: { type: String, required: true },
-    methodType: { type: mongoose_1.Schema.Types.ObjectId, ref: 'MethodType', required: true }
+    methodType: { type: mongoose_1.Schema.Types.String, ref: 'MethodType', required: true }
 });
 exports.default = mongoose_1.default.model('Method', exports.method, 'Method');
 //# sourceMappingURL=method.js.map

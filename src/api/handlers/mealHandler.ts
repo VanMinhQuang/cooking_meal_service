@@ -1,9 +1,9 @@
 import mongoose from "mongoose";
-import Meal,{ IMeal } from "../data/models/meal";
-import CookingStep,{ ICookingStep } from "../data/models/cookingStep";
-import CookingStepDetail,{ IStepDetail } from "../data/models/cookingStepDetail";
-import Category,{ICategory} from '../data/models/category';
-import { MealRequest } from "../data/requests/mealRequest";
+import Meal,{ IMeal } from "../../data/models/meal";
+import CookingStep,{ ICookingStep } from "../../data/models/cookingStep";
+import CookingStepDetail,{ IStepDetail } from "../../data/models/cookingStepDetail";
+import Category,{ICategory} from '../../data/models/category';
+import { MealRequest } from "../../data/requests/mealRequest";
 
 export const createMealHandler = async (mealData: MealRequest) => {
     const session = await mongoose.startSession();
@@ -24,10 +24,11 @@ export const createMealHandler = async (mealData: MealRequest) => {
 
         // **2. Create Cooking Steps for the Meal**
         const steps = mealData.steps.map((step) => ({
+            stepID: meal[0].mealID + '_' + step.stepOrder,
             stepDescr: step.stepDescr,
             time: step.time,
             stepOrder: step.stepOrder,
-            mealID: meal[0].mealID,
+            mealID: meal[0]._id,
         }));
 
         const createdSteps = await CookingStep.insertMany(steps, { session });

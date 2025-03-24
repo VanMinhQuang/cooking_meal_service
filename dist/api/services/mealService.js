@@ -44,7 +44,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.createMeal = exports.getMealById = exports.getAllMeals = void 0;
 const mealRepository = __importStar(require("../repository/mealRepository"));
-const mealHandler = __importStar(require("../../handlers/mealHandler"));
+const mealHandler = __importStar(require("../handlers/mealHandler"));
 const getAllMeals = () => __awaiter(void 0, void 0, void 0, function* () {
     return yield mealRepository.getAllMeals();
 });

@@ -35,11 +35,11 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importStar(require("mongoose"));
 const stepDetailSchema = new mongoose_1.Schema({
-    stepID: { type: mongoose_1.Schema.Types.ObjectId, ref: "CookingStep", required: true },
-    method: { type: mongoose_1.Schema.Types.ObjectId, ref: "Method", required: true },
+    stepID: { type: mongoose_1.Schema.Types.String, ref: "CookingStep", required: true },
+    method: { type: mongoose_1.Schema.Types.String, ref: "Method", required: true },
     ingredients: [
         {
-            ingredient: { type: mongoose_1.Schema.Types.ObjectId, ref: "Ingredient", required: true },
+            ingredient: { type: mongoose_1.Schema.Types.String, ref: "Ingredient", required: true },
             gram: { type: Number, required: true },
         },
     ],
