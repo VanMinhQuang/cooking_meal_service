@@ -46,6 +46,6 @@ exports.createUserService = exports.userService = void 0;
 const handler = __importStar(require("../handlers/userHandler"));
 const userService = (userRequest) => __awaiter(void 0, void 0, void 0, function* () { return handler.userHandler(userRequest); });
 exports.userService = userService;
-const createUserService = (userCreateRequest) => __awaiter(void 0, void 0, void 0, function* () { return handler.createUser(userCreateRequest); });
+const createUserService = (userCreateRequest) => __awaiter(void 0, void 0, void 0, function* () { return handler.createUserInfo(userCreateRequest); });
 exports.createUserService = createUserService;
 //# sourceMappingURL=userService.js.map
