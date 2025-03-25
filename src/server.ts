@@ -3,7 +3,8 @@ import dotenv from 'dotenv';
 import {connectDB } from './config/database';
 //import { setupSwagger } from "./config/swagger";
 import * as route from "./routes/routeIndex";
-dotenv.config(); // ✅ Call this function
+
+dotenv.config(); 
 
 
 const app: Application = express();
@@ -17,13 +18,13 @@ app.use(express.json());
 
 
 // Routes
-app.use(API+'/meal', route.mealRoute);
-app.use(API+'/category',route.categoryRoute);
-app.use(API+'/method',route.methodRoute);
-app.use(API+'/methodType',route.methodTypeRoute);
-app.use(API+'/ingredient',route.ingredientRoute);
-app.use(API+'/cookingStep',route.cookingStepRoute);
-
+app.use(API +'/meal', route.mealRoute);
+app.use(API +'/category',route.categoryRoute);
+app.use(API +'/method',route.methodRoute);
+app.use(API +'/methodType',route.methodTypeRoute);
+app.use(API +'/ingredient',route.ingredientRoute);
+app.use(API +'/cookingStep',route.cookingStepRoute);
+app.use(API +'/login',route.userRoute);
 // app.use('/',function(req,res){
 //     res.send('SUP HOMIE');
 // });

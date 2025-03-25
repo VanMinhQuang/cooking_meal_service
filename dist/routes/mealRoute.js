@@ -34,10 +34,11 @@ var __importStar = (this && this.__importStar) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = require("express");
+const authenticate_1 = require("../middlewares/authenticate");
 const mealController = __importStar(require("../api/controllers/mealController"));
 const router = (0, express_1.Router)();
 router.get("/", mealController.getMeals);
 router.get("/:id", mealController.getMealById);
-router.post("/", mealController.createMeal);
+router.post("/", authenticate_1.authenticate, mealController.createMeal);
 exports.default = router;
 //# sourceMappingURL=mealRoute.js.map

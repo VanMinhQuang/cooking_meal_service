@@ -32,38 +32,11 @@ var __importStar = (this && this.__importStar) || (function () {
         return result;
     };
 })();
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = __importDefault(require("express"));
-const dotenv_1 = __importDefault(require("dotenv"));
-const database_1 = require("./config/database");
-//import { setupSwagger } from "./config/swagger";
-const route = __importStar(require("./routes/routeIndex"));
-dotenv_1.default.config();
-const app = (0, express_1.default)();
-const PORT = Number(process.env.PORT) || 4000;
-const API = String(process.env.API_URL);
-(0, database_1.connectDB)();
-app.use(express_1.default.json());
-// Routes
-app.use(API + '/meal', route.mealRoute);
-app.use(API + '/category', route.categoryRoute);
-app.use(API + '/method', route.methodRoute);
-app.use(API + '/methodType', route.methodTypeRoute);
-app.use(API + '/ingredient', route.ingredientRoute);
-app.use(API + '/cookingStep', route.cookingStepRoute);
-app.use(API + '/login', route.userRoute);
-// app.use('/',function(req,res){
-//     res.send('SUP HOMIE');
-// });
-//setupSwagger(app);
-// Start Server
-app.listen(PORT, () => {
-    console.log("PORT:", process.env.PORT);
-    console.log("API_URL:", process.env.API_URL);
-    console.log(`Server running on port ${PORT}`);
-    console.log(`Swagger Docs available at http://localhost:${PORT}/swagger`);
-});
-//# sourceMappingURL=server.js.map
+const express_1 = require("express");
+const userController = __importStar(require("../api/controllers/userController"));
+const router = (0, express_1.Router)();
+router.get('/', userController.login);
+router.post('/', userController.regis);
+exports.default = router;
+//# sourceMappingURL=userRoute.js.map
