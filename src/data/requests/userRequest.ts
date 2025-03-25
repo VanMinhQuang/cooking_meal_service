@@ -6,7 +6,6 @@ export interface UserRequest {
 
 export interface UserCreateRequest{
     userName: string,
-    password: string,
     name: string,
     email: string,
     provider: string,
