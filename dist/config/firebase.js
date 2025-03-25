@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const firebase_admin_1 = __importDefault(require("firebase-admin"));
 // Load your Firebase Admin SDK credentials
 firebase_admin_1.default.initializeApp({
-    credential: firebase_admin_1.default.credential.cert(require("../serviceAccountKey.json")),
+    credential: firebase_admin_1.default.credential.cert(require("../../serviceAccountKey.json")),
 });
 exports.default = firebase_admin_1.default;
 //# sourceMappingURL=firebase.js.map
