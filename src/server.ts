@@ -1,7 +1,7 @@
 import express, {Application} from 'express';
 import dotenv from 'dotenv';
 import {connectDB } from './config/database';
-//import { setupSwagger } from "./config/swagger";
+import { setupSwagger } from "./config/swagger";
 import * as route from "./routes/routeIndex";
 
 dotenv.config(); 
@@ -31,7 +31,7 @@ app.use(API +'/login',route.userRoute);
 
 
 
-//setupSwagger(app);
+setupSwagger(app);
 // Start Server
 app.listen(PORT, () => {
     console.log("PORT:", process.env.PORT);

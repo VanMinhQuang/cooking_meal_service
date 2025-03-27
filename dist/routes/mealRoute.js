@@ -33,12 +33,31 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
+// src/routes/mealRoute.ts
 const express_1 = require("express");
-const authenticate_1 = require("../middlewares/authenticate");
 const mealController = __importStar(require("../api/controllers/mealController"));
 const router = (0, express_1.Router)();
+// #swagger.tags = ['Meals']
+// #swagger.description = 'Get all meals'
+// #swagger.path = '/meal'
 router.get("/", mealController.getMeals);
+// #swagger.tags = ['Meals']
+// #swagger.description = 'Get meal by ID'
+// #swagger.path = '/meal/{id}'
+// #swagger.parameters['id'] = { description: 'Meal ID or name' }
 router.get("/:id", mealController.getMealById);
-router.post("/", authenticate_1.authenticate, mealController.createMeal);
+// #swagger.tags = ['Meals']
+// #swagger.description = 'Create a new meal'
+// #swagger.path = '/meal'
+/* #swagger.requestBody = {
+      required: true,
+      content: {
+        "application/json": {
+          schema: { $ref: "#/definitions/Meal" }
+        }
+      }
+   }
+*/
+router.post("/", mealController.createMeal);
 exports.default = router;
 //# sourceMappingURL=mealRoute.js.map

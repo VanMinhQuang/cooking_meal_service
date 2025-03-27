@@ -39,7 +39,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const database_1 = require("./config/database");
-//import { setupSwagger } from "./config/swagger";
+const swagger_1 = require("./config/swagger");
 const route = __importStar(require("./routes/routeIndex"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
@@ -58,7 +58,7 @@ app.use(API + '/login', route.userRoute);
 // app.use('/',function(req,res){
 //     res.send('SUP HOMIE');
 // });
-//setupSwagger(app);
+(0, swagger_1.setupSwagger)(app);
 // Start Server
 app.listen(PORT, () => {
     console.log("PORT:", process.env.PORT);

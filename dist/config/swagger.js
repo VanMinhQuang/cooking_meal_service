@@ -1,21 +1,19 @@
 "use strict";
-// import swaggerUi from "swagger-ui-express";
-// import swaggerJsdoc from "swagger-jsdoc";
-// import { Application } from "express";
-// import path from "path";
-// const swaggerOptions = {
-//     definition: {
-//         openapi: "3.0.0",
-//         info: {
-//             title: "Cooking Meal Service API",
-//             version: "1.0.0",
-//             description: "A simple API for managing meals",
-//         },
-//     },
-//     apis: [path.join(__dirname, "../routes/*.js")], // Use .ts for TypeScript
-// };
-// const swaggerDocs = swaggerJsdoc(swaggerOptions);
-// export const setupSwagger = (app: Application) => {
-//     app.use("/swagger", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
-// };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.setupSwagger = void 0;
+const swagger_ui_express_1 = __importDefault(require("swagger-ui-express"));
+const setupSwagger = (app) => {
+    // Import dynamic để tránh lỗi TypeScript khi file chưa tồn tại
+    try {
+        const swaggerDocument = require('../swagger-output.json');
+        app.use("/swagger", swagger_ui_express_1.default.serve, swagger_ui_express_1.default.setup(swaggerDocument));
+    }
+    catch (error) {
+        console.error("Swagger documentation not generated. Run 'npm run swagger-autogen' first.");
+    }
+};
+exports.setupSwagger = setupSwagger;
 //# sourceMappingURL=swagger.js.map
