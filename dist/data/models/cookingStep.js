@@ -40,7 +40,7 @@ exports.cookingStep = new mongoose_1.Schema({
     stepDescr: { type: String, required: true },
     time: { type: Number, required: true }, //in minutes
     stepOrder: { type: Number, required: true },
-    mealID: { type: mongoose_1.Schema.Types.ObjectId, ref: 'Meal', required: true }
+    mealID: { type: mongoose_1.Schema.Types.String, ref: 'Meal', required: true }
 });
 exports.default = mongoose_1.default.model('CookingStep', exports.cookingStep, 'CookingStep');
 //# sourceMappingURL=cookingStep.js.map

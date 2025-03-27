@@ -1,5 +1,5 @@
 import * as mealRepository from '../repository/mealRepository'
-import * as mealHandler from '../../handlers/mealHandler'
+import * as mealHandler from '../handlers/mealHandler'
 import { IMeal } from '../../data/models/meal'
 import { MealRequest } from '../../data/requests/mealRequest';
 

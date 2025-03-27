@@ -4,18 +4,18 @@ import { IMethod } from "./method";
 import { IIngredient } from "./ingredient";
 
 export interface IStepDetail extends Document {
-  stepID: ICookingStep["_id"]; 
-  method: IMethod["_id"]; 
-  ingredients: { ingredient: IIngredient["_id"]; gram: number }[]; 
+  stepID: ICookingStep["stepID"]; 
+  method: IMethod["methodID"]; 
+  ingredients: { ingredient: IIngredient["ingredientID"]; gram: number }[]; 
   descr: string; 
 }
 
 const stepDetailSchema: Schema = new Schema({
-  stepID: { type: Schema.Types.ObjectId, ref: "CookingStep", required: true },
-  method: { type: Schema.Types.ObjectId, ref: "Method", required: true },
+  stepID: { type: Schema.Types.String, ref: "CookingStep", required: true },
+  method: { type: Schema.Types.String, ref: "Method", required: true },
   ingredients: [
     {
-      ingredient: { type: Schema.Types.ObjectId, ref: "Ingredient", required: true },
+      ingredient: { type: Schema.Types.String, ref: "Ingredient", required: true },
       gram: { type: Number, required: true }, 
     },
   ],

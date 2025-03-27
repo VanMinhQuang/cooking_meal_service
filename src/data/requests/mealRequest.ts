@@ -6,7 +6,7 @@ export interface MealRequest {
     image?: string;
     category: string[]; // Category IDs
   
-    steps: {
+    steps: {  
       stepDescr: string;
       time: number;
       stepOrder: number;

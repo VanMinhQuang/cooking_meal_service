@@ -11,7 +11,7 @@ export interface IMethod extends Document{
 export const method: Schema = new Schema({
     methodID: {type: String, required:true, unique : true},
     descr: {type: String, required: true},
-    methodType: {type: Schema.Types.ObjectId, ref: 'MethodType' ,required: true}
+    methodType: {type: Schema.Types.String, ref: 'MethodType' ,required: true}
 });
 
 export default moongoose.model<IMethod>('Method',method,'Method');
