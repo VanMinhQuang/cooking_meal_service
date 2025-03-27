@@ -1,0 +1,52 @@
+[2m
+📦 Repopack v0.1.45
+[22m
+[2mNo custom config found at repopack.config.json or global config at C:\Users\Nhat\AppData\Local\Repopack\repopack.config.json.
+You can add a config file for additional settings. Please check https://github.com/yamadashy/repopack for more information.[22m
+[36m⠙[39m Collecting files...
+[2K[1A[2K[G[36m⠹[39m Calculating metrics... (7/43) [2msrc/api/controllers/ingredientController.ts[22m
+[2K[1A[2K[G[32m✔[39m Packing completed successfully!
+
+[37m📈 Top 5 Files by Character Count and Token Count:[39m
+[2m──────────────────────────────────────────────────────[22m
+[37m1. [39m [37msrc/handlers/mealHandler.ts[39m [2m(2173 chars, 449 tokens)[22m
+[37m2. [39m [37msrc/api/repository/methodRepository.ts[39m [2m(1084 chars, 258 tokens)[22m
+[37m3. [39m [37msrc/api/repository/methodTypeRepository.ts[39m [2m(1030 chars, 241 tokens)[22m
+[37m4. [39m [37msrc/api/controllers/ingredientController.ts[39m [2m(950 chars, 209 tokens)[22m
+[37m5. [39m [37msrc/server.ts[39m [2m(934 chars, 209 tokens)[22m
+
+[37m🔎 Security Check:[39m
+[2m──────────────────[22m
+[33m1 suspicious file(s) detected and excluded from the output:[39m
+[37m1.[39m [37msrc\config\database.ts[39m
+[2m   - found basic auth credential: srv://quangvm:Baythatxa123@cookingmeal.dnbid.mongodb.net[22m
+[33m
+These files have been excluded from the output for security reasons.[39m
+[33mPlease review these files for potential sensitive information.[39m
+
+[37m📊 Pack Summary:[39m
+[2m────────────────[22m
+[37m  Total Files:[39m [37m43[39m
+[37m  Total Chars:[39m [37m24366[39m
+[37m Total Tokens:[39m [37m5655[39m
+[37m       Output:[39m [37mrepopack-output.txt[39m
+[37m     Security:[39m [37m[33m1 suspicious file(s) detected and excluded[37m[39m
+
+[32m🎉 All Done![39m
+[37mYour repository has been successfully packed.[39m
+
+[2m───────────────────────────────────────────────[22m
+[33m[33m📢 Important Notice: Project Renamed to Repomix[33m[39m
+[2m───────────────────────────────────────────────[22m
+
+[37mDue to legal considerations, this project has been renamed from "Repopack" to "Repomix".[39m
+[37mPlease install the new package:[39m
+
+[36m  npx repomix[39m
+[37m  or[39m
+[36m  npm install -g repomix[39m
+
+[37mFor more information, visit: https://github.com/yamadashy/repomix[39m
+
+[32mThank you for using Repopack! We look forward to serving you as Repomix.[39m
+
